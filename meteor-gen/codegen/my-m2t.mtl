@@ -31,7 +31,7 @@
 [/template]
 
 [template public gen(c : Class)]
-
+[c.name/]s = new Meteor.Collection("[c.name/]");
 ## ['['/]CLASS] [c.name/]
 [for (p : Property | c.attribute)]
 [p.genProp()/]
