@@ -34,15 +34,20 @@
 	[someText /]s
 [/macro]
 
+[macro public comment2 () : String]abc123[/macro]
+
 [template public gen(c : Class)]
-Attempt:13
-a:['abc'.pluralised()/]
+
+Attempt:15
+a:[pluralised('abc')/]
 b:[c.toString()/]
 c:"[c.name.toString()/]"
 d:[c.name.pluralised().toUpperFirst()/]
 e:[pluralised(c.name).toUpperFirst()/]
 f:[pluralised(c.name).toUpperFirst()/] = new Meteor.Collection("[pluralised(c.name.toLowerFirst())/]");
 g:[c.name.toUpperFirst()/]s = new Meteor.Collection("[pluralised(c.name)/]");
+h:"[c.name.isAlpha()/]"
+i:"[comment2()/]"
 ## ['['/]CLASS] [c.name/]
 [for (p : Property | c.attribute)]
 [p.genProp()/]
