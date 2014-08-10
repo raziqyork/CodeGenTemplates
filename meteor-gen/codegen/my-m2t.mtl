@@ -35,10 +35,10 @@
 [/macro]
 
 [template public gen(c : Class)]
-Attempt:12
+Attempt:13
 a:['abc'.pluralised()/]
-b:[pluralised(c.toString())/]
-c:"[pluralised(c.name)/]"
+b:[c.toString()/]
+c:"[c.name.toString()/]"
 d:[c.name.pluralised().toUpperFirst()/]
 e:[pluralised(c.name).toUpperFirst()/]
 f:[pluralised(c.name).toUpperFirst()/] = new Meteor.Collection("[pluralised(c.name.toLowerFirst())/]");
