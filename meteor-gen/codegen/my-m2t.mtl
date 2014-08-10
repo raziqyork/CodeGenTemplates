@@ -6,6 +6,7 @@
 [/comment]
 [module my-m2t('http://www.eclipse.org/uml2/4.0.0/UML')]
 
+[comment]--Macros----------------------[/comment]
 [macro public pluralise (someText : String) : String]
 	[someText/]s
 [/macro]
@@ -35,8 +36,7 @@
 [/template]
 
 [template public gen(c : Class)]
-[pluralise(c.name)/] = new Meteor.Collection("[c.name.toLowerFirst()/]");
-[c.name.toUpperFirst()/]s = new Meteor.Collection("[c.name.toLowerFirst()/]");
+[c.name.toUpperFirst().pluralise()/] = new Meteor.Collection("[c.name.toLowerFirst().pluralise()/]");
 ## ['['/]CLASS] [c.name/]
 [for (p : Property | c.attribute)]
 [p.genProp()/]
