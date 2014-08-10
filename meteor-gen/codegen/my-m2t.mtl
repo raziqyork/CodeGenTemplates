@@ -6,7 +6,9 @@
 [/comment]
 [module my-m2t('http://www.eclipse.org/uml2/4.0.0/UML')]
 
-[macro public pluralise (someText : String) : String][someText/]s[/macro]
+[macro public pluralise (someText : String) : String]
+	[someText/]s
+[/macro]
 
 [comment]
  Main entry.
@@ -33,7 +35,7 @@
 [/template]
 
 [template public gen(c : Class)]
-Attempt:7
+Attempt:8
 [pluralise(c.name)/]
 "[pluralise(c.name)/]"
 [c.name.pluralise().toUpperFirst()/]
