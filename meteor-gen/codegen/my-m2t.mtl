@@ -6,10 +6,6 @@
 [/comment]
 [module my-m2t('http://www.eclipse.org/uml2/4.0.0/UML')]
 
-[macro public pluralise (someText : String) : String]
-	[someText/]s
-[/macro]
-
 [comment]
  Main entry.
  * Do NOT change its name, it must be "generate".
@@ -34,10 +30,14 @@
 [p.packagedElement->select(oclIsKindOf(Package)).gen()/]
 [/template]
 
+[macro public pluralise (someText : String) : String]
+	[someText/]s
+[/macro]
+
 [template public gen(c : Class)]
 Attempt:9
-[pluralise('abc')/]
-[pluralise(c.name)/]
+['abc'.pluralise()/]
+[pluralise(c.name.toString())/]
 "[pluralise(c.name)/]"
 [c.name.pluralise().toUpperFirst()/]
 [pluralise(c.name).toUpperFirst()/]
