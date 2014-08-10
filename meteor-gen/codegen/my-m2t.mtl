@@ -35,7 +35,7 @@
 [/template]
 
 [template public gen(c : Class)]
-[pluralise(c.name)/] = new Meteor.Collection("[c.name.toLowerFirst()/]");
+[pluralise(c.name).toUpperFirst()/] = new Meteor.Collection("[pluralise(c.name.toLowerFirst())/]");
 [c.name.toUpperFirst()/]s = new Meteor.Collection("[c.name.toLowerFirst()/]");
 ## ['['/]CLASS] [c.name/]
 [for (p : Property | c.attribute)]
