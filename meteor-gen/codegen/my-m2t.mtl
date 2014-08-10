@@ -6,7 +6,7 @@
 [/comment]
 [module my-m2t('http://www.eclipse.org/uml2/4.0.0/UML')]
 
-[macro pluralise (String someText)]
+[macro public pluralise (someText : String) : String]
 	[someText/]s
 [/macro]
 
