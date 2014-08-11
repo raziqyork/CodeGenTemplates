@@ -30,22 +30,20 @@
 [p.packagedElement->select(oclIsKindOf(Package)).gen()/]
 [/template]
 
-[macro public pluralised (someText : String) : String]
+[template public pluralise (someText : String)]
 	[someText /]s
-[/macro]
-
-[template public pluralise (someText : String)][someText /]s[/template]
+[/template]
 
 [template public gen(c : Class)]
 
-Attempt:19
-a:[pluralised('abc')/]
+Attempt:20
+a:[pluralise('abc')/]
 b:[c.toString()/]
 c:"[c.name.toString()/]"
-d:[c.name.pluralised().toUpperFirst()/]
-e:[pluralised(c.name).toUpperFirst()/]
-f:[pluralised(c.name).toUpperFirst()/] = new Meteor.Collection("[pluralised(c.name.toLowerFirst())/]");
-g:[c.name.toUpperFirst()/]s = new Meteor.Collection("[pluralised(c.name)/]");
+d:[c.name.pluralise().toUpperFirst()/]
+e:[pluralise(c.name).toUpperFirst()/]
+f:[pluralise(c.name).toUpperFirst()/] = new Meteor.Collection("[pluralise(c.name.toLowerFirst())/]");
+g:[c.name.toUpperFirst()/]s = new Meteor.Collection("[pluralise(c.name)/]");
 h:"[c.name.isAlpha()/]"
 i:"[c.name.pluralise().toLowerFirst()/]"
 ## ['['/]CLASS] [c.name/]
