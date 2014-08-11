@@ -31,16 +31,27 @@
 [/template]
 
 [template public pluralise (someText : String)]
-	[someText /]s
+[if (someText.toLower().endsWith('y'))]
+[someText.first(someText.size() - 1)/]ies
+[else]
+[if (someText.toLower().endsWith('s'))]
+[someText.first(someText.size() - 1)/]es
+[else]
+[if (someText.toLower().endsWith('x'))]
+[someText/]es
+[else]
+[someText/]s
+[/if]
+[/if]
+[/if]
 [/template]
 
 [template public gen(c : Class)]
-
-Attempt:20
-a:[pluralise('abc')/]
+Attempt:21
+a:[pluralise('item')/]
 b:[c.toString()/]
-c:"[c.name.toString()/]"
-d:[c.name.pluralise().toUpperFirst()/]
+c:[pluralise('index')/]
+d:[pluralise('country').toUpperFirst()/]
 e:[pluralise(c.name).toUpperFirst()/]
 f:[pluralise(c.name).toUpperFirst()/] = new Meteor.Collection("[pluralise(c.name.toLowerFirst())/]");
 g:[c.name.toUpperFirst()/]s = new Meteor.Collection("[pluralise(c.name)/]");
