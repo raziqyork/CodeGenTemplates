@@ -34,11 +34,11 @@
 	[someText /]s
 [/macro]
 
-[macro public comment2 () : String]abc123[/macro]
+[template public comment2 () : String]abc123[/template]
 
 [template public gen(c : Class)]
 
-Attempt:15
+Attempt:16
 a:[pluralised('abc')/]
 b:[c.toString()/]
 c:"[c.name.toString()/]"
