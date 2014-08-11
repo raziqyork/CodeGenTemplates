@@ -30,24 +30,12 @@
 [p.packagedElement->select(oclIsKindOf(Package)).gen()/]
 [/template]
 
-[template public pluralise (someText : String)]
-[if (someText.toLower().endsWith('y'))]
-[someText.first(someText.size() - 1)/]ies
-[else]
-[if (someText.toLower().endsWith('s'))]
-[someText.first(someText.size() - 1)/]es
-[else]
-[if (someText.toLower().endsWith('x'))]
-[someText/]es
-[else]
-[someText/]s
-[/if]
-[/if]
-[/if]
+[template public pluralise (someText : String) : post="trim()"]
+[if (someText.toLower().endsWith('y'))][someText.first(someText.size() - 1)/]ies[else][if (someText.toLower().endsWith('s'))][someText.first(someText.size() - 1)/]es[else][if (someText.toLower().endsWith('x'))][someText/]es[else][someText/]s[/if][/if][/if]
 [/template]
 
 [template public gen(c : Class)]
-Attempt:21
+Attempt:22
 a:[pluralise('item')/]
 b:[c.toString()/]
 c:[pluralise('index')/]
