@@ -30,18 +30,18 @@
 [p.packagedElement->select(oclIsKindOf(Package)).gen()/]
 [/template]
 
-[template public pluralise (someText : String)]
-[if (someText.toLower().endsWith('y'))][someText.first(someText.size() - 1)/]ies[else][if (someText.toLower().endsWith('s'))][someText.first(someText.size() - 1)/]es[else][if (someText.toLower().endsWith('x'))][someText/]es[else][someText/]s[/if][/if][/if]
+[template public pluralise (s : String)]
+[if (s.toLower().endsWith('y'))][s.first(s.size()-1)/]ies[else][if (s.toLower().endsWith('s'))][s.first(s.size()-1)/]es[else][if (s.toLower().endsWith('x'))][s/]es[else][s/]s[/if][/if][/if]
 [/template]
 
 [template public gen(c : Class)]
-Attempt:22
-a:[pluralise('item')/]
+Attempt:23
+a:['item'.pluralise()/]
 b:[c.toString()/]
-c:[pluralise('index')/]
-d:[pluralise('country').toUpperFirst()/]
+c:['index'.pluralise()/]
+d:['country'.pluralise().toUpperFirst()/]
 e:[pluralise(c.name).toUpperFirst()/]
-f:[pluralise(c.name).toUpperFirst()/] = new Meteor.Collection("[pluralise(c.name.toLowerFirst())/]");
+f:[c.name.pluralise().toUpperFirst()/] = new Meteor.Collection("[c.name.toLowerFirst().pluralise()/]");
 g:[c.name.toUpperFirst()/]s = new Meteor.Collection("[pluralise(c.name)/]");
 h:"[c.name.isAlpha()/]"
 i:"[c.name.pluralise().toLowerFirst()/]"
