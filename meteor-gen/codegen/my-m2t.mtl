@@ -30,7 +30,7 @@
 [p.packagedElement->select(oclIsKindOf(Package)).gen()/]
 [/template]
 
-[template public pluralise (someText : String) : post="trim()"]
+[template public pluralise (someText : String)]
 [if (someText.toLower().endsWith('y'))][someText.first(someText.size() - 1)/]ies[else][if (someText.toLower().endsWith('s'))][someText.first(someText.size() - 1)/]es[else][if (someText.toLower().endsWith('x'))][someText/]es[else][someText/]s[/if][/if][/if]
 [/template]
 
